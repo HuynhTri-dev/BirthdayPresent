@@ -1,0 +1,263 @@
+:root {
+  --plate-color: #cccccc;
+  --cake-color1: #553c13;
+  --cake-color2: #2e200a;
+  --cream-color: #f4ebdc;
+  --red-color1: #ad030f;
+  --red-color2: #7b020b;
+  --yellow-color: #ffbf00;
+  --pink-color: #ef6885;
+}
+
+/* Chung */
+* {
+  font-family: Tahoma, sans-serif;
+}
+body {
+  background-color: var(--pink-color);
+  /* background-color: #333333; */
+}
+
+/* O */
+#the-wish,
+#wish-become-true {
+  padding: 10px;
+  width: 270px;
+  height: 60px;
+  background-color: var(--cream-color);
+  border-radius: 10px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 10px;
+  position: absolute;
+  top: 100px;
+  right: -250px;
+  display: none;
+}
+
+#the-wish p,
+#wish-become-true p {
+  font-size: 1.1rem;
+}
+
+/* Button */
+.button-wrap {
+  position: absolute;
+  left: -150px;
+  top: 100px;
+}
+
+#start,
+#blow {
+  width: 90px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Cake */
+.cake-wrap {
+  width: 550px;
+  height: 400px;
+  align-content: center;
+  position: relative;
+  left: 30%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.flame {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #ff9900;
+  border-radius: 49%;
+  animation: flicker 0.3s infinite alternate;
+  box-shadow: 0 0 10px rgba(255, 153, 0, 0.559); /* Ánh sáng nhấp nháy */
+}
+
+/* Hiệu ứng nhấp nháy của ngọn lửa */
+@keyframes flicker {
+  0% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) scale(0.9);
+    opacity: 0.7;
+  }
+}
+
+/* BALLON */
+#balloons-container {
+  position: relative;
+  width: 90%;
+  /* bottom: 5px;
+  left: 10px;
+  z-index: 1; */
+}
+
+.balloon {
+  position: absolute;
+  bottom: 10px;
+  width: 60px;
+  height: 75px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: rise 4s forwards ease-in, sway 1s infinite ease-out;
+}
+
+.triangle {
+  position: absolute;
+  bottom: -10px; /* Đặt vị trí tam giác ngay dưới quả bóng */
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 20px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  transform: translateX(-50%);
+}
+
+@keyframes rise {
+  0% {
+    bottom: 10px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 100vh;
+    opacity: 0;
+  }
+}
+
+/* Hiệu ứng dung đưa (lắc qua lắc lại) */
+@keyframes sway {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+/* Wish */
+.wish-wrap {
+  width: 80%;
+  margin: 50px auto;
+  color: white;
+}
+
+.wish-wrap h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.album {
+  margin: 20px auto;
+  justify-content: center;
+  text-align: center;
+  height: 400px;
+  width: 60%;
+  display: flex;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+#album-img {
+  height: auto;
+  width: 500px;
+  object-fit: contain;
+}
+
+.chevron {
+  width: 50px;
+  height: 50px;
+  align-content: center;
+  cursor: pointer;
+  color: black;
+  font-size: 2rem;
+  position: absolute;
+}
+
+.chevron:hover {
+  background-color: var(--cream-color);
+  border-radius: 10px;
+}
+
+#left {
+  top: 40%;
+  left: 5px;
+}
+
+#right {
+  top: 40%;
+  right: 5px;
+}
+
+.wish-wrap p {
+  font-size: 1.1rem;
+  margin: 15px 30px;
+}
+
+.video {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#creater {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+#creater-img {
+  margin-right: 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+#creater p {
+  color: white;
+  font-weight: 700;
+}
+
+#get-back {
+  width: 150px;
+  height: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: var(--yellow-color);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#button {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
